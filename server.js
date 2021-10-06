@@ -22,8 +22,8 @@ app.use(express.urlencoded({extended: true}));
 app.use(methodOverride('_method'));
 
 //routes
-const winsConroller = require('./controllers/wins')
-app.use('/wins', winsConroller)
+const winsController = require('./controllers/wins')
+app.use('/wins', winsController)
 
 //listener
 app.listen(PORT, () => {
