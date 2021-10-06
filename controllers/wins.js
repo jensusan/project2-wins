@@ -23,6 +23,24 @@ router.get('/', (req, res) => {
 })
 })
 
+//update
+router.put('/:id', (req, res) => {
+    Win.findByIdAndUpdate(req.params.id, req.body, {
+        new: true
+    }, (err, updatedWin) => {
+        res.redirect(`/wins/${req.params.id}`)
+    })
+})
+
+//edit
+router.get('/:id/edit', (req, res) => {
+    Win.findById(req.params.id, (err, foundWin) => {
+        res.render('edit.ejs', {
+            win: foundWin
+        })
+    })
+})
+
 //show
 router.get('/:id', (req, res) => {
     Win.findById(req.params.id, (err, foundWin) => {
