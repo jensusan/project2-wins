@@ -23,4 +23,14 @@ router.get('/', (req, res) => {
 })
 })
 
+//show
+router.get('/:id', (req, res) => {
+    Win.findById(req.params.id, (err, foundWin) => {
+        res.render('show.ejs', {
+            win: foundWin,
+            index: req.params.id
+        })
+    })
+})
+
 module.exports = router

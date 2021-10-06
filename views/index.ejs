@@ -11,7 +11,7 @@
     <main>
         <%wins.forEach(win => { %>
             <div>
-                <h4><%=win.text%></h4>
+                <a href='/wins/<%=win._id%>'><h4><%=win.text%></h4></a>
                 <p><%=win.author%></p>
             </div> <%
         }) %>
