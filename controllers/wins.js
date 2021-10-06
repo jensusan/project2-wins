@@ -23,12 +23,24 @@ router.get('/', (req, res) => {
 })
 })
 
+//new
+router.get('/new', (req, res) => {
+    res.render('new.ejs');
+});
+
 //update
 router.put('/:id', (req, res) => {
     Win.findByIdAndUpdate(req.params.id, req.body, {
         new: true
     }, (err, updatedWin) => {
         res.redirect(`/wins/${req.params.id}`)
+    })
+})
+
+//create
+router.post('/', (req, res) => {
+    Win.create(req.body, (err, createdWin) => {
+        res.redirect('/wins')
     })
 })
 
