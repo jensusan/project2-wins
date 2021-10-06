@@ -28,6 +28,13 @@ router.get('/new', (req, res) => {
     res.render('new.ejs');
 });
 
+//delete
+router.delete('/:id', (req, res) => {
+    Win.findByIdAndRemove(req.params.id, (err, data) => {
+        res.redirect('/wins');
+    });
+});
+
 //update
 router.put('/:id', (req, res) => {
     Win.findByIdAndUpdate(req.params.id, req.body, {
