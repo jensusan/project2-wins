@@ -1,8 +1,18 @@
 const express = require('express');
 const router = express.Router();
 const Win = require('../models/win');
+const winSeed = require('../models/winSeed')
 
-module.exports = router
+
+
+//seed
+router.get('/seed', (req, res) => {
+	Win.deleteMany({}, (error, allWins) => {});
+
+	Win.create(winSeed, (error, data) => {
+		res.redirect('/wins');
+	});
+});
 
 //index
 router.get('/', (req, res) => {
@@ -12,3 +22,5 @@ router.get('/', (req, res) => {
     })
 })
 })
+
+module.exports = router
