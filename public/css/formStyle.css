@@ -1,0 +1,30 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    background-color: rgb(255, 255, 255);
+}
+h1 {
+    text-align: center;
+}
+.container {
+    background-color: rgb(255, 253, 182);
+    overflow: auto;
+    width: 60vw;
+    height: 60vw;
+    margin: 50px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: 1px 1px 10px #ddd,
+                -1px -1px 10px #ddd,
+                1px -1px 10px #ddd,
+                -1px 1px 10px #ddd;
+  }
+
+  input {
+      width: 200px;
+  }

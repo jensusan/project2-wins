@@ -9,6 +9,19 @@
 <body>
     <h3><%=win.text%></h3>
     <p><%=win.author%></p>
+    <div class='feedback'>
+    <p><%=win.likes%></p>
+       <form action="/wins/<%=win._id%>/likes?_method=PUT" method="POST"> 
+        <input type='hidden' value="<%=win.text%>">
+        <input type='hidden' value="<%=win.author%>">
+        <input type='hidden' value="<%=win.likes%>">
+        <input type='submit' value="&hearts;">
+       </form> 
+       <form>
+           <input type='text' name='comment'>
+           <input type="submit" value="comment">
+       </form>
+    </div>
     <form action='/wins/<%=win._id%>?_method=DELETE' method='POST'>
         <input type='submit' value="DELETE">
     </form>

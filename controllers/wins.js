@@ -36,6 +36,15 @@ router.delete('/:id', (req, res) => {
 });
 
 //update
+router.put('/:id/likes', (req, res) => {
+    req.body.likes++
+    Win.findByIdAndUpdate(req.params.id, req.body, {
+        new:true
+    }, (err, updatedWin) => { 
+        res.redirect('/wins')
+})
+})
+
 router.put('/:id', (req, res) => {
     Win.findByIdAndUpdate(req.params.id, req.body, {
         new: true

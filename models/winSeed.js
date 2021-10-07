@@ -9,11 +9,13 @@ const winSeed = [
     },
     {
         author: 'Demitri',
-        text: 'Got a new job!'
+        text: 'Got a new job!',
+        likes: 2
     },
     {
         author: 'Nik',
-        text: 'Got a promotion!'
+        text: 'Got a promotion!',
+        likes: 1
     }
 ]
 
