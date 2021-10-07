@@ -17,8 +17,16 @@
         </form>
         <%wins.forEach(win => { %>
             <div class='container'>
-                <a href='/wins/<%=win._id%>'><h2><%=win.text%></h2></a>
+                <a href='/<%=win._id%>'><h2><%=win.text%></h2></a>
                 <p>-<%=win.author%></p>
+                <form action="/<%=win._id%>/likes-index?_method=PUT" method='POST'>
+                    <input type="hidden" name="text" value="<%=win.text%>">
+                    <input type="hidden" name="author" value="<%=win.author%>">
+                    <input type="hidden" name="likes" value="<%=win.likes%>">
+                    <input type="hidden" name="comments" value="<%=win.comments%>">
+                    <input id="heart" type='submit' value='&#128155;'> 
+                    <label for='heart'><%=win.likes%></label>
+                </form> 
             </div> <%
         }) %>
        

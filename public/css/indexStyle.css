@@ -44,5 +44,14 @@ a {
     margin-top: 40px;
 }
 
+#heart {
+    background:white;
+    font-size: 20px;
+    padding:5px 3px 5px 15px;
+    border:0 none;
+    cursor:pointer; 
+}
+
+
 
 

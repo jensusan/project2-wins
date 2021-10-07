@@ -1,0 +1,38 @@
+body {
+    text-align: center;
+}
+
+main {
+   margin-top: 100px;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    background-color: rgb(255, 89, 0);
+    height: 150px;
+}
+
+form {
+    display: inline;
+    margin: 20px;
+}
+
+input[type=submit] {
+    padding:5px 15px; 
+    background:rgb(204, 204, 204); 
+    border:0 none;
+    cursor:pointer;
+    border-radius: 5px; 
+    margin-top: 30px;
+}
+
+#heart {
+    background:white;
+    font-size: 20px;
+    padding:5px 3px 5px 15px; 
+}

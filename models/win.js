@@ -2,7 +2,8 @@ const mongoose = require('mongoose');
 const winSchema = new mongoose.Schema({
     author: String,
     text: String,
-    likes: Number
+    likes: Number,
+    comments: String
 }, {timstamps: true} )
 
 const Win = mongoose.model('Win', winSchema)

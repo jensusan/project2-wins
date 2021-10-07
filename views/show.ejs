@@ -4,28 +4,35 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href='/css/showStyle.css'>
     <title>Document</title>
 </head>
 <body>
-    <h3><%=win.text%></h3>
-    <p><%=win.author%></p>
-    <div class='feedback'>
-    <p><%=win.likes%></p>
-       <form action="/<%=win._id%>/likes?_method=PUT" method="POST"> 
-        <input type='hidden' value="<%=win.text%>">
-        <input type='hidden' value="<%=win.author%>">
-        <input type='hidden' value="<%=win.likes%>">
-        <input type='submit' value="&hearts;">
-       </form> 
-       <form>
-           <input type='text' name='comment'>
-           <input type="submit" value="comment">
-       </form>
+    <header>
+        <h1>We are winnning!</h1>
+       <a href="/">Home</a>
+    </header>
+    <main>
+    <h2><%=win.text%></h2>
+    <p>-<%=win.author%></p>
+    <div id='likes'>
+        <form action="/<%=win._id%>/likes?_method=PUT" method='POST'>
+            <input type="hidden" name="text" value="<%=win.text%>">
+            <input type="hidden" name="author" value="<%=win.author%>">
+            <input type="hidden" name="likes" value="<%=win.likes%>">
+            <input type="hidden" name="comments" value="<%=win.comments%>">
+            <input id="heart" type='submit' value='&#128155;'> 
+            <label for='heart'><%=win.likes%></label>
+        </form> 
     </div>
+    <h4>Comments:</h4>
+    <p><%=win.comments%></p>
     <form action='/<%=win._id%>?_method=DELETE' method='POST'>
-        <input type='submit' value="DELETE">
+        <input type='submit' value="DELETE WIN">
     </form>
-        <a href='/<%=win._id%>/edit'>Edit Win</a>
-    <a href="/">Back to Index Page</a>
+    <form action='/<%=win._id%>/edit'>
+        <input type='submit' value='EDIT WIN'>
+    </form>
+</main>
 </body>
 </html>
