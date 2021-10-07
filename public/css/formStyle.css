@@ -1,6 +1,18 @@
 * {
     box-sizing: border-box;
 }
+
+ header {
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+     text-align: center;
+     color: white;
+     background-color: rgb(255, 89, 0);
+     height: 150px;
+ }
+
 body {
     background-color: rgb(255, 255, 255);
 }
@@ -8,17 +20,17 @@ h1 {
     text-align: center;
 }
 .container {
-    background-color: rgb(255, 253, 182);
+    border: 20px solid rgb(255, 132, 0);
     overflow: auto;
-    width: 60vw;
-    height: 60vw;
+    width: 50vw;
+    height: 50vw;
     margin: 50px auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
     gap: 20px;
     align-items: center;
-    border-radius: 10px;
+    border-radius: 15px;
     box-shadow: 1px 1px 10px #ddd,
                 -1px -1px 10px #ddd,
                 1px -1px 10px #ddd,
@@ -28,3 +40,11 @@ h1 {
   input {
       width: 200px;
   }
+
+  input[type=submit] {
+    padding:5px 15px; 
+    background:rgb(204, 204, 204); 
+    border:0 none;
+    cursor:pointer;
+    border-radius: 5px; 
+}

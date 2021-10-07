@@ -52,6 +52,14 @@ router.put('/:id/likes', (req, res) => {
     })
 })
 
+router.put('/:id/comments', (req, res) => {
+    Win.findByIdAndUpdate(req.params.id, req.body, {
+        new: true
+    }, (err, updatedWin) => {
+        res.redirect(`/${req.params.id}`)
+    })
+})
+
 router.put('/:id', (req, res) => {
     console.log(req.body)
     Win.findByIdAndUpdate(req.params.id, req.body, {

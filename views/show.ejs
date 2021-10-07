@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel='stylesheet' href='/css/showStyle.css'>
-    <title>Document</title>
+    <title>Wins!</title>
 </head>
 <body>
     <header>
@@ -26,7 +26,19 @@
         </form> 
     </div>
     <h4>Comments:</h4>
-    <p><%=win.comments%></p>
+    <%win.comments.forEach(comment => { %>
+        <p><%=comment%></p>
+    <% })%>
+    <form action="/<%=win._id%>/comments?_method=PUT" method='POST'>
+        <input type="hidden" name="text" value="<%=win.text%>">
+        <input type="hidden" name="author" value="<%=win.author%>">
+        <input type="hidden" name="likes" value="<%=win.likes%>">
+        <%win.comments.forEach(comment => { %> 
+        <input type="hidden" name="comments" value="<%=comment%>">
+        <% })%>
+        <input type="text" name="comments">
+        <input type='submit' value='ADD COMMENT'> 
+    </form> 
     <form action='/<%=win._id%>?_method=DELETE' method='POST'>
         <input type='submit' value="DELETE WIN">
     </form>

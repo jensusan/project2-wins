@@ -3,7 +3,7 @@ const winSchema = new mongoose.Schema({
     author: String,
     text: String,
     likes: Number,
-    comments: String
+    comments: [String]
 }, {timstamps: true} )
 
 const Win = mongoose.model('Win', winSchema)

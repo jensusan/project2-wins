@@ -29,6 +29,10 @@ main {
     padding: 20px;
     height: 175px;
     width: 400px;
+    box-shadow: 1px 1px 10px #ddd,
+    -1px -1px 10px #ddd,
+    1px -1px 10px #ddd,
+    -1px 1px 10px #ddd;
 }
 
 a {
@@ -42,6 +46,15 @@ a {
 
 #add {
     margin-top: 40px;
+}
+
+
+input[type=submit] {
+    padding:5px 15px; 
+    background:rgb(204, 204, 204); 
+    border:0 none;
+    cursor:pointer;
+    border-radius: 5px; 
 }
 
 #heart {
