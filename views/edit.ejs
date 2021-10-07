@@ -9,7 +9,7 @@
 </head>
 <body>
     <h1>Edit Win</h1>
-    <form class='container' action="/wins/<%=win._id%>?_method=PUT" method="POST">
+    <form class='container' action="/<%=win._id%>?_method=PUT" method="POST">
         <label>
             Win<input type="text" name="text" value='<%=win.text%>'>
         </label>

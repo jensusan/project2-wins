@@ -25,7 +25,7 @@ app.use(express.json());
 
 //routes
 const winsController = require('./controllers/wins')
-app.use('/wins', winsController)
+app.use('/', winsController)
 
 //listener
 app.listen(PORT, () => {
