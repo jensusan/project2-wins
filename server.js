@@ -6,7 +6,7 @@ const mongoose = require('mongoose');
 const PORT = process.env.PORT;
 const methodOverride = require('method-override');
 
-mongoose.connect(process.env.DATABASE_URL, {
+mongoose.connect(process.env.MONGODB_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true
 })
@@ -21,6 +21,7 @@ db.on('disconnected', () => console.log('mongo disconnected'));
 app.use(express.urlencoded({extended: true}));
 app.use(express.static(__dirname + '/public'));
 app.use(methodOverride('_method'));
+app.use(express.json());
 
 //routes
 const winsController = require('./controllers/wins')
