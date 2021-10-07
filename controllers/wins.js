@@ -3,6 +3,7 @@ const router = express.Router();
 const Win = require('../models/win');
 const winSeed = require('../models/winSeed')
 
+
 //seed
 router.get('/seed', (req, res) => {
 	Win.deleteMany({}, (error, allWins) => {});
@@ -16,7 +17,7 @@ router.get('/seed', (req, res) => {
 router.get('/', (req, res) => {
     Win.find({}, (error, allWins) => {
     res.render('index.ejs', {
-        wins: allWins
+        wins: allWins,
     })
 })
 })
@@ -93,5 +94,5 @@ router.get('/:id', (req, res) => {
         })
     })
 })
-
+  
 module.exports = router
