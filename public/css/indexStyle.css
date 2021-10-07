@@ -66,5 +66,15 @@ input[type=submit] {
 }
 
 
+@media screen and  (max-width:500px) {
+    .container {
+        width: 275px;
+        border: 15px solid rgb(255, 132, 0);
+        padding: 15px;
+    }
+}
+    
+
+
 
 
